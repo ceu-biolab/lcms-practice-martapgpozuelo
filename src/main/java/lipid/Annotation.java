@@ -1,9 +1,9 @@
 package lipid;
 
-import java.util.Collections;
-import java.util.Objects;
-import java.util.Set;
-import java.util.TreeSet;
+import adduct.Adduct;
+import adduct.AdductList;
+
+import java.util.*;
 
 /**
  * Class to represent the annotation over a lipid
@@ -19,6 +19,7 @@ public class Annotation {
     private final Set<Peak> groupedSignals;
     private int score;
     private int totalScoresApplied;
+    private static final int PPM_TOLERANCE = 2;
 
 
     /**
@@ -104,6 +105,7 @@ public class Annotation {
      * has been applied.
      */
     public double getNormalizedScore() {
+        if (this.totalScoresApplied == 0) return 0d;
         return (double) this.score / this.totalScoresApplied;
     }
 
@@ -128,5 +130,63 @@ public class Annotation {
                 lipid.getName(), mz, rtMin, adduct, intensity, score);
     }
 
-    // !!TODO Detect the adduct with an algorithm or with drools, up to the user.
+    public Map<Peak, String> getMapMZ() throws ClassNotFoundException {
+        Double prevdiff = Double.MAX_VALUE;
+        Peak peak1 = null;
+
+        System.out.println("reference: " + this.mz);
+        // Seleccionar el pico de referencia (más cercano al mz de la anotación)
+        for (Peak candidatePeak : groupedSignals) {
+            System.out.println("candidatePeak: " + candidatePeak);
+            Double diff = Math.abs(this.mz - candidatePeak.getMz());
+            System.out.println("diff from reference: " + diff);
+            if (diff < prevdiff) {
+                prevdiff = diff;
+                peak1 = candidatePeak;
+                System.out.println("candidate peak possible: " + peak1);
+            }
+            if (diff == 0) break;
+        }
+
+        Set<Peak> iterativePeaks = new LinkedHashSet<>(groupedSignals);
+        iterativePeaks.remove(peak1);
+
+        // Seleccionar mapa de aductos según el modo de ionización
+        Map<String, Double> adductMap = this.ionizationMode == IoniationMode.POSITIVE
+                ? AdductList.MAPMZPOSITIVEADDUCTS
+                : AdductList.MAPMZNEGATIVEADDUCTS;
+
+        // Iterar sobre combinaciones de aductos
+        for (String adduct1 : adductMap.keySet()) {
+            System.out.println("adduct1: " + adduct1);
+            Map<String, Double> iterativeAdductMap = new LinkedHashMap<>(adductMap);
+            iterativeAdductMap.remove(adduct1);
+
+            for (String adduct2 : iterativeAdductMap.keySet()) {
+                System.out.println("adduct2: " + adduct2);
+                for (Peak candidatePeak2 : iterativePeaks) {
+                    Double referenceMass = Adduct.getMonoisotopicMassFromMZ(this.mz, adduct1);
+                    System.out.println("referenceMass: " + referenceMass);
+                    Double candidateMass = Adduct.getMonoisotopicMassFromMZ(candidatePeak2.getMz(), adduct2);
+                    System.out.println("candidateMass: " + candidateMass);
+
+                    double ppm = Math.abs(Adduct.calculatePPMIncrement(referenceMass, candidateMass));
+                    System.out.println("ppm: " + ppm);
+
+                    if (ppm <= PPM_TOLERANCE) {
+                        this.adduct = adduct1;
+                        Map<Peak, String> result = new LinkedHashMap<>();
+                        result.put(peak1, adduct1);
+                        result.put(candidatePeak2, adduct2);
+                        System.out.println("result: " + result);
+                        return result;
+                    }
+                }
+            }
+        }
+
+        throw new ClassNotFoundException("No se encontraron coincidencias de aductos para el modo de ionización: "
+                + ionizationMode);
+    }
+
 }

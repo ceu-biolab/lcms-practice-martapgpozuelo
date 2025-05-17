@@ -10,11 +10,14 @@ unit LipidScoreUnit;
 // !! TODO This rule does not include the lipid type, you shall add it.
 // !! TODO Rule that states that the same lipid type with the same number of double bonds and a higher number of carbons should have a higher RT
 // !! TODO
-rule "Score 1 for lipid pair with increasing RT and carbon count"
+rule "1: Score 1 for lipid pair with increasing RT and carbon count"
 when
-    $a1 : /annotations [$rt1 : rtMin, $carbonCount1 : lipid.getCarbonCount(), $doubleBondCount : lipid.getDoubleBondsCount()]
+//rtmin es el RT(L1), RT(L2) o del a2, porque RT(L1)>RT(L2) en positive
+//no se checkea el type, es una regla diferente a las que aparecen en el pdf?
+//
+    $a1 : /annotations [$rt1 : rtMin, $carbonCount1 : lipid.getCarbonCount(), $doubleBondCount : lipid.getDoubleBondsCount(), $lipidType : lipid.getLipidType()]
     $a2 : /annotations [this!= $a1, lipid.getDoubleBondsCount() == $doubleBondCount,
-    rtMin > $rt1, lipid.getCarbonCount() > $carbonCount1]
+    rtMin > $rt1, lipid.getCarbonCount() > $carbonCount1, lipid.getLipidType()==$lipidType]
 then
     // in this case, the only change is the addition of the score, but the fact does not change so we do not break the principle of refractoriness
     $a1.addScore(1);
@@ -23,5 +26,84 @@ then
     System.out.println("Scored 1 for annotations: " + $a1 + " and " + $a2);
 end
 
+rule "2: Score 1 for lipid pair with increasing RT and double bounds"
+when
+//rtmin es el RT(L1), RT(L2) o del a2, porque RT(L1)>RT(L2) en positive
+//no se checkea el type, es una regla diferente a las que aparecen en el pdf?
+//
+    $a1 : /annotations [$rt1 : rtMin, $carbonCount1 : lipid.getCarbonCount(), $doubleBondCount : lipid.getDoubleBondsCount(), $lipidType : lipid.getLipidType()]
+    $a2 : /annotations [this!= $a1, lipid.getDoubleBondsCount() < $doubleBondCount,
+    rtMin > $rt1, lipid.getCarbonCount() == $carbonCount1, lipid.getLipidType()==$lipidType]
+then
+    // in this case, the only change is the addition of the score, but the fact does not change so we do not break the principle of refractoriness
+    $a1.addScore(1);
+    $a2.addScore(1);
+    // !! TODO ONLY FOR DEBUGGING
+    System.out.println("Scored 1 for annotations: " + $a1 + " and " + $a2);
+end
 
-// !! TODO NEXT RULE: Negative evidence. If the RT follows the opposite order than the previous one, then the addScore should be -1.
+rule "3: Score 1 for lipid pair with increasing RT and different lipid type L1 PG L2 PE"
+when
+//rtmin es el RT(L1), RT(L2) o del a2, porque RT(L1)>RT(L2) en positive
+//no se checkea el type, es una regla diferente a las que aparecen en el pdf?
+//
+    $a1 : /annotations [$rt1 : rtMin, $carbonCount1 : lipid.getCarbonCount(), $doubleBondCount : lipid.getDoubleBondsCount(), $lipid2 : lipid.getLipidType()]
+    $a2 : /annotations [this!= $a1, lipid.getDoubleBondsCount() == $doubleBondCount,
+    rtMin > $rt1, lipid.getCarbonCount() == $carbonCount1, lipid.comparelipid($lipid2)==1]
+
+then
+    // in this case, the only change is the addition of the score, but the fact does not change so we do not break the principle of refractoriness
+    $a1.addScore(1);
+    $a2.addScore(1);
+    // !! TODO ONLY FOR DEBUGGING
+    System.out.println("Scored 1 for annotations: " + $a1 + " and " + $a2);
+end
+
+rule "4: Score -1 for lipid pair with decreasing RT and carbon count"
+when
+//rtmin es el RT(L1), RT(L2) o del a2, porque RT(L1)>RT(L2) en positive
+//no se checkea el type, es una regla diferente a las que aparecen en el pdf?
+//
+    $a1 : /annotations [$rt1 : rtMin, $carbonCount1 : lipid.getCarbonCount(), $doubleBondCount : lipid.getDoubleBondsCount(), $lipidType : lipid.getLipidType()]
+    $a2 : /annotations [this!= $a1, lipid.getDoubleBondsCount() == $doubleBondCount,
+    rtMin < $rt1, lipid.getCarbonCount() > $carbonCount1, lipid.getLipidType()==$lipidType]
+then
+    // in this case, the only change is the addition of the score, but the fact does not change so we do not break the principle of refractoriness
+    $a1.addScore(-1);
+    $a2.addScore(-1);
+    // !! TODO ONLY FOR DEBUGGING
+    System.out.println("Scored 1 for annotations: " + $a1 + " and " + $a2);
+end
+
+rule "5: Score -1 for lipid pair with decreasing RT and double bounds"
+when
+//rtmin es el RT(L1), RT(L2) o del a2, porque RT(L1)>RT(L2) en positive
+//no se checkea el type, es una regla diferente a las que aparecen en el pdf?
+//
+    $a1 : /annotations [$rt1 : rtMin, $carbonCount1 : lipid.getCarbonCount(), $doubleBondCount : lipid.getDoubleBondsCount(), $lipidType : lipid.getLipidType()]
+    $a2 : /annotations [this!= $a1, lipid.getDoubleBondsCount() < $doubleBondCount,
+    rtMin < $rt1, lipid.getCarbonCount() == $carbonCount1, lipid.getLipidType()==$lipidType]
+then
+    // in this case, the only change is the addition of the score, but the fact does not change so we do not break the principle of refractoriness
+    $a1.addScore(-1);
+    $a2.addScore(-1);
+    // !! TODO ONLY FOR DEBUGGING
+    System.out.println("Scored 1 for annotations: " + $a1 + " and " + $a2);
+end
+
+rule "6: Score -1 for lipid pair with decreasing RT and different lipid type L1 PG L2 PE"
+when
+//rtmin es el RT(L1), RT(L2) o del a2, porque RT(L1)>RT(L2) en positive
+//no se checkea el type, es una regla diferente a las que aparecen en el pdf?
+//
+    $a1 : /annotations [$rt1 : rtMin, $carbonCount1 : lipid.getCarbonCount(), $doubleBondCount : lipid.getDoubleBondsCount(), $lipid2 : lipid.getLipidType()]
+    $a2 : /annotations [this!= $a1, lipid.getDoubleBondsCount() == $doubleBondCount,
+    rtMin < $rt1, lipid.getCarbonCount() == $carbonCount1, lipid.comparelipid($lipid2)==1]
+
+then
+    // in this case, the only change is the addition of the score, but the fact does not change so we do not break the principle of refractoriness
+    $a1.addScore(-1);
+    $a2.addScore(-1);
+    // !! TODO ONLY FOR DEBUGGING
+    System.out.println("Scored 1 for annotations: " + $a1 + " and " + $a2);
+end
