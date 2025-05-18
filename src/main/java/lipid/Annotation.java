@@ -174,7 +174,7 @@ public class Annotation {
                     System.out.println("ppm: " + ppm);
 
                     if (ppm <= PPM_TOLERANCE) {
-                        this.adduct = adduct1;
+                        this.adduct = adduct1; //here it established the adduct that is going to be detected (principal adduct)
                         Map<Peak, String> result = new LinkedHashMap<>();
                         result.put(peak1, adduct1);
                         result.put(candidatePeak2, adduct2);

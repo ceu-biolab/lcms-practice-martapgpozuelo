@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="lipid.AdductDetectionTest" time="0.005" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo/target/test-classes:/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo/target/classes:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-engine/10.0.0/drools-ruleunits-engine-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-dsl/10.0.0/drools-ruleunits-dsl-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-canonical-model/10.0.0/drools-canonical-model-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-model-compiler/10.0.0/drools-model-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-util-maven-support/10.0.0/kie-util-maven-support-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-core/10.0.0/drools-core-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-util-xml/10.0.0/kie-util-xml-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-base/10.0.0/drools-base-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-wiring-static/10.0.0/drools-wiring-static-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-io/10.0.0/drools-io-10.0.0.jar:/Users/martaplaza/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/Users/martaplaza/.m2/repository/org/drools/drools-compiler/10.0.0/drools-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-drl-parser/10.0.0/drools-drl-parser-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-drl-extensions/10.0.0/drools-drl-extensions-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-drl-ast/10.0.0/drools-drl-ast-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-kiesession/10.0.0/drools-kiesession-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ecj/10.0.0/drools-ecj-10.0.0.jar:/Users/martaplaza/.m2/repository/org/eclipse/jdt/ecj/3.33.0/ecj-3.33.0.jar:/Users/martaplaza/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-impl/10.0.0/drools-ruleunits-impl-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-api/10.0.0/drools-ruleunits-api-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-model-codegen/10.0.0/drools-model-codegen-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-codegen-common/10.0.0/drools-codegen-common-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-model-prototype/10.0.0/drools-model-prototype-10.0.0.jar:/Users/martaplaza/.m2/repository/com/github/javaparser/javaparser-core/3.25.8/javaparser-core-3.25.8.jar:/Users/martaplaza/.m2/repository/org/drools/drools-mvel-parser/10.0.0/drools-mvel-parser-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-mvel-compiler/10.0.0/drools-mvel-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/martaplaza/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/martaplaza/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/martaplaza/.m2/repository/ch/qos/logback/logback-classic/1.5.17/logback-classic-1.5.17.jar:/Users/martaplaza/.m2/repository/ch/qos/logback/logback-core/1.5.17/logback-core-1.5.17.jar:/Users/martaplaza/.m2/repository/org/drools/drools-wiring-dynamic/10.0.0/drools-wiring-dynamic-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-wiring-api/10.0.0/drools-wiring-api-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-memory-compiler/10.0.0/kie-memory-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-util/10.0.0/drools-util-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-api/10.0.0/kie-api-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-internal/10.0.0/kie-internal-10.0.0.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="ES"/>
+    <property name="sun.boot.library.path" value="/Users/martaplaza/Library/Java/JavaVirtualMachines/openjdk-23.0.2/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo/target/surefire/surefirebooter-20250517220528493_3.jar /Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo/target/surefire 2025-05-17T22-05-28_453-jvmRun1 surefire-20250517220528493_1tmp surefire_0-20250517220528493_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo/target/test-classes:/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo/target/classes:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-engine/10.0.0/drools-ruleunits-engine-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-dsl/10.0.0/drools-ruleunits-dsl-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-canonical-model/10.0.0/drools-canonical-model-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-model-compiler/10.0.0/drools-model-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-util-maven-support/10.0.0/kie-util-maven-support-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-core/10.0.0/drools-core-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-util-xml/10.0.0/kie-util-xml-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-base/10.0.0/drools-base-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-wiring-static/10.0.0/drools-wiring-static-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-io/10.0.0/drools-io-10.0.0.jar:/Users/martaplaza/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/Users/martaplaza/.m2/repository/org/drools/drools-compiler/10.0.0/drools-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-drl-parser/10.0.0/drools-drl-parser-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-drl-extensions/10.0.0/drools-drl-extensions-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-drl-ast/10.0.0/drools-drl-ast-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-kiesession/10.0.0/drools-kiesession-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ecj/10.0.0/drools-ecj-10.0.0.jar:/Users/martaplaza/.m2/repository/org/eclipse/jdt/ecj/3.33.0/ecj-3.33.0.jar:/Users/martaplaza/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-impl/10.0.0/drools-ruleunits-impl-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-ruleunits-api/10.0.0/drools-ruleunits-api-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-model-codegen/10.0.0/drools-model-codegen-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-codegen-common/10.0.0/drools-codegen-common-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-model-prototype/10.0.0/drools-model-prototype-10.0.0.jar:/Users/martaplaza/.m2/repository/com/github/javaparser/javaparser-core/3.25.8/javaparser-core-3.25.8.jar:/Users/martaplaza/.m2/repository/org/drools/drools-mvel-parser/10.0.0/drools-mvel-parser-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-mvel-compiler/10.0.0/drools-mvel-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/martaplaza/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/martaplaza/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/martaplaza/.m2/repository/ch/qos/logback/logback-classic/1.5.17/logback-classic-1.5.17.jar:/Users/martaplaza/.m2/repository/ch/qos/logback/logback-core/1.5.17/logback-core-1.5.17.jar:/Users/martaplaza/.m2/repository/org/drools/drools-wiring-dynamic/10.0.0/drools-wiring-dynamic-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-wiring-api/10.0.0/drools-wiring-api-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-memory-compiler/10.0.0/kie-memory-compiler-10.0.0.jar:/Users/martaplaza/.m2/repository/org/drools/drools-util/10.0.0/drools-util-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-api/10.0.0/kie-api-10.0.0.jar:/Users/martaplaza/.m2/repository/org/kie/kie-internal/10.0.0/kie-internal-10.0.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/martaplaza"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-01-21"/>
+    <property name="java.home" value="/Users/martaplaza/Library/Java/JavaVirtualMachines/openjdk-23.0.2/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo/target/surefire/surefirebooter-20250517220528493_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="23.0.2+7-58"/>
+    <property name="user.name" value="martaplaza"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.4.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/martaplaza/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/dn/z02jzqrx5xn438kvhrmpnzl80000gp/T/"/>
+    <property name="idea.version" value="2024.3.5"/>
+    <property name="java.version" value="23.0.2"/>
+    <property name="user.dir" value="/Users/martaplaza/Desktop/universidad/QUINTO/segundo cuatri/DSS/lcms-practice-martapgpozuelo"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/martaplaza/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23.0.2+7-58"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="shouldDetectNegativeAdductHCOOHvsH2O" classname="lipid.AdductDetectionTest" time="0.001">
+    <system-out><![CDATA[reference: 700.5
+candidatePeak: Peak(mz=764,5166, intensity=85000,00)
+diff from reference: 64.01660000000004
+candidate peak possible: Peak(mz=764,5166, intensity=85000,00)
+candidatePeak: Peak(mz=700,5000, intensity=90000,00)
+diff from reference: 0.0
+candidate peak possible: Peak(mz=700,5000, intensity=90000,00)
+adduct1: [M-H]−
+adduct2: [M+Cl]−
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+referenceMass: 701.507276
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+candidateMass: 729.547198
+ppm: 38435.0
+adduct2: [M+HCOOH-H]−
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+referenceMass: 701.507276
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+candidateMass: 719.518399
+ppm: 25032.0
+adduct2: [M-H-H2O]−
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+referenceMass: 701.507276
+[M-H-H2O]− has a charge of 1
+[M-H-H2O]− has a multimer count of 1
+candidateMass: 783.53499
+ppm: 104689.0
+adduct2: [2M-H]−
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+referenceMass: 701.507276
+[2M-H]− has a charge of 1
+[2M-H]− has a multimer count of 2
+candidateMass: 382.76193800000004
+ppm: 832751.0
+adduct2: [M-2H]2−
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+referenceMass: 701.507276
+[M-2H]2− has a charge of 2
+[M-2H]2− has a multimer count of 1
+candidateMass: 1530.0404760000001
+ppm: 541511.0
+adduct1: [M+Cl]−
+adduct2: [M-H]−
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+referenceMass: 665.530598
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+candidateMass: 765.5238760000001
+ppm: 130621.0
+adduct2: [M+HCOOH-H]−
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+referenceMass: 665.530598
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+candidateMass: 719.518399
+ppm: 75033.0
+adduct2: [M-H-H2O]−
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+referenceMass: 665.530598
+[M-H-H2O]− has a charge of 1
+[M-H-H2O]− has a multimer count of 1
+candidateMass: 783.53499
+ppm: 150605.0
+adduct2: [2M-H]−
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+referenceMass: 665.530598
+[2M-H]− has a charge of 1
+[2M-H]− has a multimer count of 2
+candidateMass: 382.76193800000004
+ppm: 738759.0
+adduct2: [M-2H]2−
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+referenceMass: 665.530598
+[M-2H]2− has a charge of 2
+[M-2H]2− has a multimer count of 1
+candidateMass: 1530.0404760000001
+ppm: 565024.0
+adduct1: [M+HCOOH-H]−
+adduct2: [M-H]−
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+referenceMass: 655.501799
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+candidateMass: 765.5238760000001
+ppm: 143721.0
+adduct2: [M+Cl]−
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+referenceMass: 655.501799
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+candidateMass: 729.547198
+ppm: 101495.0
+adduct2: [M-H-H2O]−
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+referenceMass: 655.501799
+[M-H-H2O]− has a charge of 1
+[M-H-H2O]− has a multimer count of 1
+candidateMass: 783.53499
+ppm: 163405.0
+adduct2: [2M-H]−
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+referenceMass: 655.501799
+[2M-H]− has a charge of 1
+[2M-H]− has a multimer count of 2
+candidateMass: 382.76193800000004
+ppm: 712557.0
+adduct2: [M-2H]2−
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+referenceMass: 655.501799
+[M-2H]2− has a charge of 2
+[M-2H]2− has a multimer count of 1
+candidateMass: 1530.0404760000001
+ppm: 571579.0
+adduct1: [M-H-H2O]−
+adduct2: [M-H]−
+[M-H-H2O]− has a charge of 1
+[M-H-H2O]− has a multimer count of 1
+referenceMass: 719.51839
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+candidateMass: 765.5238760000001
+ppm: 60097.0
+adduct2: [M+Cl]−
+[M-H-H2O]− has a charge of 1
+[M-H-H2O]− has a multimer count of 1
+referenceMass: 719.51839
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+candidateMass: 729.547198
+ppm: 13747.0
+adduct2: [M+HCOOH-H]−
+[M-H-H2O]− has a charge of 1
+[M-H-H2O]− has a multimer count of 1
+referenceMass: 719.51839
+[M+HCOOH-H]− has a charge of 1
+[M+HCOOH-H]− has a multimer count of 1
+candidateMass: 719.518399
+ppm: 0.0
+result: {Peak(mz=700,5000, intensity=90000,00)=[M-H-H2O]−, Peak(mz=764,5166, intensity=85000,00)=[M+HCOOH-H]−}
+Matched peak 700,5000 with adduct [M-H-H2O]−
+Matched peak 764,5166 with adduct [M+HCOOH-H]−
+]]></system-out>
+  </testcase>
+  <testcase name="shouldDetectNegativeAdductBasedOnMzDifference" classname="lipid.AdductDetectionTest" time="0.0">
+    <system-out><![CDATA[reference: 700.5
+candidatePeak: Peak(mz=736,4767, intensity=80000,00)
+diff from reference: 35.97670000000005
+candidate peak possible: Peak(mz=736,4767, intensity=80000,00)
+candidatePeak: Peak(mz=700,5000, intensity=100000,00)
+diff from reference: 0.0
+candidate peak possible: Peak(mz=700,5000, intensity=100000,00)
+adduct1: [M-H]−
+adduct2: [M+Cl]−
+[M-H]− has a charge of 1
+[M-H]− has a multimer count of 1
+referenceMass: 701.507276
+[M+Cl]− has a charge of 1
+[M+Cl]− has a multimer count of 1
+candidateMass: 701.507298
+ppm: 0.0
+result: {Peak(mz=700,5000, intensity=100000,00)=[M-H]−, Peak(mz=736,4767, intensity=80000,00)=[M+Cl]−}
+Matched peak 700,5000 with adduct [M-H]−
+Matched peak 736,4767 with adduct [M+Cl]−
+]]></system-out>
+  </testcase>
+  <testcase name="shouldDetectDoublyChargedAdduct" classname="lipid.AdductDetectionTest" time="0.0">
+    <system-out><![CDATA[reference: 700.5
+candidatePeak: Peak(mz=700,5000, intensity=100000,00)
+diff from reference: 0.0
+candidate peak possible: Peak(mz=700,5000, intensity=100000,00)
+adduct1: [M+H]+
+adduct2: [M+2H]2+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492724
+[M+2H]2+ has a charge of 2
+[M+2H]2+ has a multimer count of 1
+candidateMass: 699.4934480000001
+ppm: 1.0
+result: {Peak(mz=700,5000, intensity=100000,00)=[M+H]+, Peak(mz=350,7540, intensity=85000,00)=[M+2H]2+}
+]]></system-out>
+  </testcase>
+  <testcase name="shouldDetectAdductBasedOnMzDifference" classname="lipid.AdductDetectionTest" time="0.0">
+    <system-out><![CDATA[reference: 700.49999
+candidatePeak: Peak(mz=722,4820, intensity=80000,00)
+diff from reference: 21.982009999999946
+candidate peak possible: Peak(mz=722,4820, intensity=80000,00)
+candidatePeak: Peak(mz=700,5000, intensity=100000,00)
+diff from reference: 9.999999974752427E-6
+candidate peak possible: Peak(mz=700,5000, intensity=100000,00)
+adduct1: [M+H]+
+adduct2: [M+2H]2+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492714
+[M+2H]2+ has a charge of 2
+[M+2H]2+ has a multimer count of 1
+candidateMass: 1442.9494479999998
+ppm: 515234.0
+adduct2: [M+Na]+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492714
+[M+Na]+ has a charge of 1
+[M+Na]+ has a multimer count of 1
+candidateMass: 699.4927819999999
+ppm: 0.0
+result: {Peak(mz=700,5000, intensity=100000,00)=[M+H]+, Peak(mz=722,4820, intensity=80000,00)=[M+Na]+}
+resultado final: {Peak(mz=700,5000, intensity=100000,00)=[M+H]+, Peak(mz=722,4820, intensity=80000,00)=[M+Na]+}
+]]></system-out>
+  </testcase>
+  <testcase name="shouldDetectLossOfWaterAdduct" classname="lipid.AdductDetectionTest" time="0.001">
+    <system-out><![CDATA[reference: 700.5
+candidatePeak: Peak(mz=700,5000, intensity=90000,00)
+diff from reference: 0.0
+candidate peak possible: Peak(mz=700,5000, intensity=90000,00)
+adduct1: [M+H]+
+adduct2: [M+2H]2+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492724
+[M+2H]2+ has a charge of 2
+[M+2H]2+ has a multimer count of 1
+candidateMass: 1362.964248
+ppm: 486786.0
+adduct2: [M+Na]+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492724
+[M+Na]+ has a charge of 1
+[M+Na]+ has a multimer count of 1
+candidateMass: 659.500182
+ppm: 60641.0
+adduct2: [M+K]+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492724
+[M+K]+ has a charge of 1
+[M+K]+ has a multimer count of 1
+candidateMass: 643.526242
+ppm: 86968.0
+adduct2: [M+NH4]+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492724
+[M+NH4]+ has a charge of 1
+[M+NH4]+ has a multimer count of 1
+candidateMass: 664.4555770000001
+ppm: 52731.0
+adduct2: [M+H-H2O]+
+[M+H]+ has a charge of 1
+[M+H]+ has a multimer count of 1
+referenceMass: 699.492724
+[M+H-H2O]+ has a charge of 1
+[M+H-H2O]+ has a multimer count of 1
+candidateMass: 699.4926
+ppm: 0.0
+result: {Peak(mz=700,5000, intensity=90000,00)=[M+H]+, Peak(mz=682,4894, intensity=70000,00)=[M+H-H2O]+}
+]]></system-out>
+  </testcase>
+</testsuite>

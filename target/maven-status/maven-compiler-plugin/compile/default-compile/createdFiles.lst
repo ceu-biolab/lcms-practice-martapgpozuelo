@@ -1,0 +1,10 @@
+lipid/LipidType.class
+lipid/IoniationMode.class
+main/Main.class
+adduct/Adduct.class
+lipid/Lipid.class
+adduct/AdductList.class
+lipid/Peak.class
+lipid/LipidScoreUnit.class
+lipid/Annotation.class
+adduct/MassTransformation.class
