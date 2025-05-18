@@ -135,7 +135,6 @@ public class Annotation {
         Peak peak1 = null;
 
         System.out.println("reference: " + this.mz);
-        // Seleccionar el pico de referencia (más cercano al mz de la anotación)
         for (Peak candidatePeak : groupedSignals) {
             System.out.println("candidatePeak: " + candidatePeak);
             Double diff = Math.abs(this.mz - candidatePeak.getMz());
@@ -148,15 +147,17 @@ public class Annotation {
             if (diff == 0) break;
         }
 
+        System.out.println("peak1 chosen: " + peak1);
         Set<Peak> iterativePeaks = new LinkedHashSet<>(groupedSignals);
         iterativePeaks.remove(peak1);
+        System.out.println("iterativePeaks: " + iterativePeaks);
 
-        // Seleccionar mapa de aductos según el modo de ionización
+
         Map<String, Double> adductMap = this.ionizationMode == IoniationMode.POSITIVE
                 ? AdductList.MAPMZPOSITIVEADDUCTS
                 : AdductList.MAPMZNEGATIVEADDUCTS;
 
-        // Iterar sobre combinaciones de aductos
+
         for (String adduct1 : adductMap.keySet()) {
             System.out.println("adduct1: " + adduct1);
             Map<String, Double> iterativeAdductMap = new LinkedHashMap<>(adductMap);

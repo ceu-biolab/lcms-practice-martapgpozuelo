@@ -161,5 +161,42 @@ public class AdductDetectionTest {
 
 
 
+    @Test
+    public void shouldDetectAdductsWithThreePeaks() {
+        // Supongamos que tenemos un lípido y tres picos correspondientes a [M+H]+, [M+Na]+ y [2M+H]+
+        Peak mH = new Peak(700.500, 100000.0);      // [M+H]+
+        Peak mNa = new Peak(722.482, 80000.0);      // [M+Na]+
+        Peak dMmH = new Peak(1400.000, 60000.0);    // [2M+H]+
+
+        Lipid lipid = new Lipid(1, "PC 34:1", "C42H82NO8P", LipidType.PC, 34, 1);
+
+        double annotationMZ = 700.500;
+        double annotationIntensity = 90000.0;
+        double annotationRT = 6.5d;
+        Annotation annotation = new Annotation(
+                lipid,
+                annotationMZ,
+                annotationIntensity,
+                annotationRT,
+                IoniationMode.POSITIVE,
+                Set.of(mH, mNa, dMmH)
+        );
+
+        try {
+            Map<Peak, String> adductMatches = annotation.getMapMZ();
+            adductMatches.forEach((peak, adduct) ->
+                    System.out.printf("Matched peak %.4f with adduct %s%n", peak.getMz(), adduct)
+            );
+        } catch (Exception e) {
+            System.out.println("aducto no encontrado");
+        }
+
+        assertNotNull("[M+H]+ should be detected", annotation.getAdduct());
+        assertEquals("[M+H]+", annotation.getAdduct());
+    }
+
+
+
+
 
 }
