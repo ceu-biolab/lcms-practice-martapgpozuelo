@@ -1,17 +1,18 @@
 package lipid;
 
+import adduct.Adduct;
+import adduct.AdductList;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class AdductDetectionTest {
     // !!TODO For the adduct detection both regular algorithms or drools can be used as far the tests are passed.
@@ -194,7 +195,6 @@ public class AdductDetectionTest {
         assertNotNull("[M+H]+ should be detected", annotation.getAdduct());
         assertEquals("[M+H]+", annotation.getAdduct());
     }
-
 
 
 

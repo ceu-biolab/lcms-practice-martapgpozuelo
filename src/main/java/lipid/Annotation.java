@@ -189,5 +189,4 @@ public class Annotation {
         throw new ClassNotFoundException("No se encontraron coincidencias de aductos para el modo de ionización: "
                 + ionizationMode);
     }
-
 }
